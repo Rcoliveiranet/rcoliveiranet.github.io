@@ -1,283 +1,209 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael Oliveira - Portfólio Profissional</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rafael Oliveira | Infraestrutura de TI</title>
+  <meta name="description" content="Rafael Oliveira – Infraestrutura de TI, Operações e Liderança Técnica. Experiência com ERP TOTVS RMS, PDV, redes, servidores e cloud (Azure)." />
+  <meta name="author" content="Rafael Oliveira" />
+  <meta property="og:title" content="Rafael Oliveira | Infraestrutura de TI" />
+  <meta property="og:description" content="Infraestrutura de TI, Operações e Liderança Técnica. Experiência em ambientes de alta disponibilidade e projetos de varejo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://rcoliveiranet.github.io/og-image.jpg" />
+  <meta property="og:url" content="https://rcoliveiranet.github.io" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b1020;           /* fundo escuro para gradiente do topo */
+      --card:#10172a;         /* cartões em dark */
+      --ink:#0b1020;          /* texto em claro */
+      --ink-soft:#5b6b8b;
+      --brand:#4ea3ff;        /* azul discreto */
+      --brand-2:#7bd389;      /* verde discreto */
+      --paper:#ffffff;        /* fundo claro */
+      --paper-2:#f6f8fb;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --radius:16px;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif; 
+      color: var(--ink);
+      background: var(--paper);
+    }
+    /* Hero */
+    .hero{
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(78,163,255,.25), transparent 60%),
+                  radial-gradient(1000px 500px at -5% -10%, rgba(123,211,137,.2), transparent 60%),
+                  linear-gradient(180deg, #0d142b 0%, #0d142b 30%, var(--paper) 30%);
+      color:#e9f2ff;
+      padding: 64px 20px 0;
+    }
+    .container{max-width:1040px; margin:0 auto; padding:0 20px}
+    .badge{display:inline-flex; align-items:center; gap:8px; background: rgba(255,255,255,.08); color:#cfe6ff; border:1px solid rgba(255,255,255,.15); padding:6px 10px; border-radius:999px; font-size:12px}
+    h1{font-size:40px; line-height:1.2; margin:16px 0 8px}
+    .subtitle{font-size:18px; color:#a3c3ff; max-width:880px}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 64px}
+    .btn{appearance:none; border:none; border-radius:12px; padding:12px 16px; cursor:pointer; font-weight:600; box-shadow: var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px}
+    .btn.primary{background:#4ea3ff; color:#081120}
+    .btn.outline{background:transparent; border:2px solid #7bd389; color:#d7ffe2}
+    .btn.white{background:#ffffff; color:#0b1020; border:1px solid #e6eefb}
+
+    /* Cards grid */
+    section{padding:56px 0}
+    h2{font-size:28px; margin:0 0 12px}
+    p.lead{color:#445171; margin:0 0 24px}
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:20px}
+    .card{grid-column: span 12; background: var(--paper-2); border:1px solid #e9eef7; border-radius: var(--radius); box-shadow: var(--shadow); padding:20px}
+    @media(min-width: 760px){ .card.half{grid-column: span 6} }
+
+    .list{margin:0; padding:0 0 0 18px}
+    .tag{display:inline-block; background:#e9f4ff; color:#0b3d7a; border:1px solid #d6eaff; padding:4px 8px; border-radius:999px; font-size:12px; margin:4px 6px 0 0}
+
+    /* Timeline */
+    .timeline{position:relative}
+    .timeline::before{content:""; position:absolute; left:18px; top:8px; bottom:8px; width:2px; background:#dbe6fb}
+    .tl-item{position:relative; padding-left:48px; margin:18px 0}
+    .tl-item::before{content:""; position:absolute; left:12px; top:6px; width:12px; height:12px; background:#4ea3ff; border:3px solid #fff; border-radius:999px; box-shadow:0 0 0 2px #cfe4ff}
+    .muted{color:#667799}
+
+    /* Footer */
+    footer{padding:40px 0 80px; color:#667799}
+    .contact a{color:#0b3d7a; text-decoration:none}
+
+    /* Dark mode */
+    .toggle{position:fixed; right:16px; bottom:16px; z-index:5}
+    .toggle button{border:none; background:#0d142b; color:#cde2ff; padding:10px 12px; border-radius:10px; box-shadow: var(--shadow); cursor:pointer}
+    .dark body{background:#0b1020; color:#e9f2ff}
+  </style>
+  <script>
+    // Dark-mode simples com preferências do sistema
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(prefersDark){ document.documentElement.classList.add('dark') }
+    function dl(file){ window.open(file, '_blank'); }
+  </script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <div class="logo">
-                    <h2>Rafael Oliveira</h2>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#experience">Experiência</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+  <div class="toggle"><button onclick="document.documentElement.classList.toggle('dark')">Alternar tema</button></div>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Disponível • Presencial · Híbrido · Remoto</span>
+      <h1>Rafael Oliveira</h1>
+      <p class="subtitle">Profissional de TI | Infraestrutura, Operações & Liderança Técnica | ERP / PDV | Cloud (Azure). Experiência em ambientes de alta disponibilidade, varejo corporativo e projetos com <strong>R$ 98MM</strong> e <strong>+400 usuários</strong>.</p>
+      <div class="cta">
+        <a class="btn white" href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">🔗 Ver no LinkedIn</a>
+        <a class="btn primary" href="#contato">✉️ Falar comigo</a>
+        <a class="btn outline" onclick="dl('Rafael_Oliveira_Curriculo_PT_Final.pdf')">⬇️ CV em PDF (PT)</a>
+        <a class="btn outline" onclick="dl('Rafael_Oliveira_CV_EN_Final.pdf')">⬇️ Resume (EN)</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- SOBRE MIM -->
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+      <p class="lead">Profissional de TI com mais de 6 anos em infraestrutura e operações. Atuei como líder técnico único de filial, garantindo disponibilidade total de <strong>ERP TOTVS RMS</strong>, <strong>PDV</strong>, servidores e conectividade. Tenho perfil prático, foco em estabilidade e eficiência, e experiência real em implantação, automação e treinamento de equipes.</p>
+      <div>
+        <span class="tag">Alta disponibilidade</span>
+        <span class="tag">Redes & Servidores</span>
+        <span class="tag">ERP TOTVS RMS</span>
+        <span class="tag">PDV</span>
+        <span class="tag">CFTV</span>
+        <span class="tag">VoIP</span>
+        <span class="tag">Cloud (Azure)</span>
+        <span class="tag">Automação com Sheets</span>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experiencia">
+      <h2>Experiência</h2>
+      <div class="timeline">
+        <div class="tl-item card">
+          <strong>Supervisor de TI</strong> — <span class="muted">Grupo Giassi • Jun/2017 – Out/2023 • Jaraguá do Sul/SC</span>
+          <ul class="list">
+            <li>Responsável técnico na inauguração de filial de <strong>R$ 98MM</strong> com <strong>zero downtime</strong>.</li>
+            <li>Gestão de <strong>32 PDVs</strong>, servidores, <strong>CFTV (+250 câmeras)</strong>, <strong>VoIP</strong> e +40 estações.</li>
+            <li>Treinamento de <strong>+400 usuários</strong>, reduzindo chamados recorrentes.</li>
+            <li>Automação de indicadores e processos em Google Sheets.</li>
+            <li>Atuação 24/7 em incidentes críticos e continuidade operacional.</li>
+          </ul>
         </div>
-    </header>
-
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Rafael Oliveira</h1>
-                        <h2 class="subtitle">Especialista em TI | Infraestrutura, Projetos e Otimização de Processos</h2>
-                        <p class="hero-description">
-                            Profissional de TI com foco em transformar desafios de negócio em soluções eficientes. 
-                            Experiência comprovada em análise de operações, otimização de processos e liderança de 
-                            projetos de infraestrutura que garantem a continuidade e o crescimento dos negócios.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary">Entre em Contato</a>
-                            <a href="#experience" class="btn btn-secondary">Ver Experiência</a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <div class="profile-placeholder">
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">Sobre Mim</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Sou um profissional de TI com 18 anos de vivência e paixão pela área, 
-                            especializado em infraestrutura, gestão de projetos e otimização de processos. 
-                            Minha abordagem é sempre
-                            focada em resultados mensuráveis e na criação de valor para o negócio através da tecnologia.
-
-                        </p>
-                        <p>
-                            Durante minha trajetória, liderei projetos de grande escala, como a implementação de uma nova 
-                            filial de R$98M, e desenvolvi soluções inovadoras de automação que geraram dados inéditos para 
-                            a gestão e otimizaram processos críticos.
-                        </p>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>18+</h3>
-                            <p>Anos de Experiência</p>
-                        </div>
-                        <div class="stat">
-                            <h3>R$98M</h3>
-                            <p>Projeto Liderado</p>
-                        </div>
-                        <div class="stat">
-                            <h3>400+</h3>
-                            <p>Funcionários Impactados</p>
-                        </div>
-                        <div class="stat">
-                            <h3>3+</h3>
-                            <p>Profissionais Mentorados</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="experience">
-            <div class="container">
-                <h2 class="section-title">Experiência Profissional</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2017 - 2023</div>
-                        <div class="timeline-content">
-                            <h3>Técnico de TI</h3>
-                            <h4>Giassi Supermercados | Jaraguá do Sul, SC</h4>
-                            <p>
-                                Responsável pela gestão completa da infraestrutura de TI da filial, garantindo alta 
-                                disponibilidade de sistemas críticos para operações de supermercado e shopping center.
-                            </p>
-                            <ul class="achievements">
-                                <li><strong>Gestão de Projetos:</strong> Ponto focal para implementação de nova filial (R$98M)</li>
-                                <li><strong>Automação:</strong> Criou solução no Google Sheets para monitorar 400+ funcionários</li>
-                                <li><strong>Análise Financeira:</strong> Automatizou DRE para 26 departamentos</li>
-                                <li><strong>Mentoria:</strong> Treinou e desenvolveu 3+ profissionais júniores</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">2016</div>
-                        <div class="timeline-content">
-                            <h3>Analista de Sistemas</h3>
-                            <h4>Seti Tecnologia | Jaraguá do Sul, SC</h4>
-                            <p>
-                                Analista consultivo em empresa especializada em segurança de TI, responsável pela 
-                                configuração de firewalls e suporte avançado para VPNs, QoS e servidores de e-mail.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">2012 - Presente</div>
-                        <div class="timeline-content">
-                            <h3>Consultor de TI</h3>
-                            <h4>Freelance</h4>
-                            <p>
-                                Prestação de serviços de consultoria e suporte técnico para clientes de diversos portes, 
-                                incluindo grandes varejistas nacionais como Renner e Youcom.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 class="section-title">Habilidades e Competências</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-project-diagram"></i> Gestão de Projetos</h3>
-                        <ul>
-                            <li>Gestão de Projetos de TI</li>
-                            <li>Gestão de Fornecedores</li>
-                            <li>Liderança Técnica</li>
-                            <li>Mentoria de Equipes</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Infraestrutura</h3>
-                        <ul>
-                            <li>Administração de Servidores (Windows/Linux)</li>
-                            <li>Administração de Redes</li>
-                            <li>Segurança de Redes</li>
-                            <li>Sistemas POS (Visual Mix)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-line"></i> Análise e Processos</h3>
-                        <ul>
-                            <li>Análise de Dados e DRE</li>
-                            <li>Otimização de Processos</li>
-                            <li>Automação (Google Sheets)</li>
-                            <li>ERP (RMS Totys)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3><i class="fas fa-headset"></i> Suporte e Consultoria</h3>
-                        <ul>
-                            <li>Suporte Consultivo</li>
-                            <li>Resolução de Problemas</li>
-                            <li>Documentação Técnica</li>
-                            <li>Treinamento de Usuários</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Entre em Contato</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Vamos conversar sobre oportunidades!</h3>
-                        <p>
-                            Estou sempre aberto a discutir novos projetos, oportunidades de carreira e 
-                            colaborações interessantes. Entre em contato comigo através dos canais abaixo.
-                        </p>
-                        
-                        <div class="contact-items">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <h4>Email</h4>
-                                    <a href="mailto:rcoliveiranet@gmail.com">rcoliveiranet@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin"></i>
-                                <div>
-                                    <h4>LinkedIn</h4>
-                                    <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank">linkedin.com/in/oliveira-ti</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <h4>Localização</h4>
-                                    <span>Jaraguá do Sul, SC, Brasil</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Nome</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Assunto</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Mensagem</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Rafael Oliveira. Todos os direitos reservados.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:rcoliveiranet@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="tl-item card">
+          <strong>Analista de Sistemas</strong> — <span class="muted">Seti Tecnologia • Abr/2016 – Out/2016 • Jaraguá do Sul/SC</span>
+          <ul class="list">
+            <li>Suporte N2/N3 em <strong>segurança</strong> e <strong>redes</strong> para ~20 clientes.</li>
+            <li>Configuração de <strong>Firewalls</strong>, <strong>VPNs</strong>, <strong>QoS</strong> e e-mail.</li>
+            <li>Troubleshooting avançado de redes corporativas.</li>
+          </ul>
         </div>
-    </footer>
+        <div class="tl-item card">
+          <strong>Consultor de TI (Freelancer)</strong> — <span class="muted">2012 – Presente • Sob demanda</span>
+          <ul class="list">
+            <li>Consultoria de infraestrutura e suporte para PMEs.</li>
+            <li>Implantações e apoio técnico em aberturas de lojas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- CERTIFICAÇÕES E FORMAÇÃO -->
+    <section id="certificacoes">
+      <div class="grid">
+        <div class="card half">
+          <h2>Certificações</h2>
+          <ul class="list">
+            <li>Microsoft Certified: <strong>Azure Fundamentals (AZ‑900)</strong> — em andamento</li>
+          </ul>
+        </div>
+        <div class="card half">
+          <h2>Formação</h2>
+          <ul class="list">
+            <li>Tecnólogo em <strong>Gestão da Tecnologia da Informação</strong> — SENAC</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETÊNCIAS -->
+    <section id="competencias">
+      <h2>Competências</h2>
+      <div class="grid">
+        <div class="card half">
+          <ul class="list">
+            <li>Infraestrutura local e híbrida (servidores, redes, cloud)</li>
+            <li>Ambientes de alta disponibilidade (ERP TOTVS RMS, PDV, BI)</li>
+            <li>Implantação e manutenção de sistemas críticos</li>
+          </ul>
+        </div>
+        <div class="card half">
+          <ul class="list">
+            <li>Treinamento de usuários e liderança técnica</li>
+            <li>Planejamento, documentação e melhoria de processos</li>
+            <li>Segurança de rede: Firewalls, VPNs, QoS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="card contact">
+        <p>Vamos conversar. Estou disponível para oportunidades em infraestrutura, operações e liderança técnica.</p>
+        <p>✉️ <a href="mailto:rcoliveiranet@gmail.com">rcoliveiranet@gmail.com</a> &nbsp; | &nbsp; ☎️ (47) 9 9242-5067 &nbsp; | &nbsp; 🔗 <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">linkedin.com/in/oliveira-ti</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="y"></span> Rafael Oliveira. Feito com HTML + CSS + JS. Hospedado no GitHub Pages.</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
