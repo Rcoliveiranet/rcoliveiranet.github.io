@@ -13,78 +13,106 @@
   <meta property="og:url" content="https://rcoliveiranet.github.io" />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    :root{
-      --bg:#0b1020;           /* fundo escuro para gradiente do topo */
-      --card:#10172a;         /* cartões em dark */
-      --ink:#0b1020;          /* texto em claro */
-      --ink-soft:#5b6b8b;
-      --brand:#4ea3ff;        /* azul discreto */
-      --brand-2:#7bd389;      /* verde discreto */
-      --paper:#ffffff;        /* fundo claro */
-      --paper-2:#f6f8fb;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-      --radius:16px;
-    }
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif; 
-      color: var(--ink);
-      background: var(--paper);
-    }
-    /* Hero */
-    .hero{
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(78,163,255,.25), transparent 60%),
-                  radial-gradient(1000px 500px at -5% -10%, rgba(123,211,137,.2), transparent 60%),
-                  linear-gradient(180deg, #0d142b 0%, #0d142b 30%, var(--paper) 30%);
-      color:#e9f2ff;
-      padding: 64px 20px 0;
-    }
-    .container{max-width:1040px; margin:0 auto; padding:0 20px}
-    .badge{display:inline-flex; align-items:center; gap:8px; background: rgba(255,255,255,.08); color:#cfe6ff; border:1px solid rgba(255,255,255,.15); padding:6px 10px; border-radius:999px; font-size:12px}
-    h1{font-size:40px; line-height:1.2; margin:16px 0 8px}
-    .subtitle{font-size:18px; color:#a3c3ff; max-width:880px}
-    .cta{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 64px}
-    .btn{appearance:none; border:none; border-radius:12px; padding:12px 16px; cursor:pointer; font-weight:600; box-shadow: var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px}
-    .btn.primary{background:#4ea3ff; color:#081120}
-    .btn.outline{background:transparent; border:2px solid #7bd389; color:#d7ffe2}
-    .btn.white{background:#ffffff; color:#0b1020; border:1px solid #e6eefb}
+  :root{
+    --paper: #ffffff;
+    --paper-2: #f8fafc;
+    --ink: #0a0f1e;
+    --ink-soft:#49536a;
+    --card-bg:#ffffff;
+    --card-border:#e2e8f0;
+    --brand:#2563eb;
+    --brand-2:#16a34a;
+    --accent:#3b82f6;
+    --accent-2:#14b8a6;
+    --chip-bg:#e9f2ff;
+    --chip-ink:#0b3d7a;
+    --shadow: 0 10px 30px rgba(2,6,23,.08);
+    --radius:16px;
+  }
+  .dark:root{
+    --paper:#0b1020;
+    --paper-2:#11182c;
+    --ink:#eef3ff;
+    --ink-soft:#a9b7d6;
+    --card-bg:#121a31;
+    --card-border:#243558;
+    --brand:#60a5fa;
+    --brand-2:#34d399;
+    --accent:#93c5fd;
+    --accent-2:#5eead4;
+    --chip-bg:#14284a;
+    --chip-ink:#dbe9ff;
+    --shadow: 0 12px 28px rgba(0,0,0,.35);
+  }
 
-    /* Cards grid */
-    section{padding:56px 0}
-    h2{font-size:28px; margin:0 0 12px}
-    p.lead{color:#445171; margin:0 0 24px}
-    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:20px}
-    .card{grid-column: span 12; background: var(--paper-2); border:1px solid #e9eef7; border-radius: var(--radius); box-shadow: var(--shadow); padding:20px}
-    @media(min-width: 760px){ .card.half{grid-column: span 6} }
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+  }
 
-    .list{margin:0; padding:0 0 0 18px}
-    .tag{display:inline-block; background:#e9f4ff; color:#0b3d7a; border:1px solid #d6eaff; padding:4px 8px; border-radius:999px; font-size:12px; margin:4px 6px 0 0}
+  .hero{
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 75% -20%, rgba(59,130,246,.18), transparent 60%),
+      radial-gradient(900px 500px at -10% -10%, rgba(20,184,166,.18), transparent 60%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%);
+    padding:72px 20px 0;
+  }
+  .container{max-width:1040px; margin:0 auto; padding:0 20px}
+  .badge{display:inline-flex; align-items:center; gap:8px; background:var(--paper-2); color:var(--ink-soft); border:1px solid var(--card-border); padding:6px 10px; border-radius:999px; font-size:12px}
+  h1{font-size:clamp(36px, 5vw, 56px); line-height:1.12; margin:16px 0 8px; font-weight:800; letter-spacing:.2px; color:var(--brand)}
+  .subtitle{font-size:clamp(17px, 2.2vw, 20px); color:var(--ink-soft); max-width:880px}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 64px}
+  .btn{appearance:none; border:none; border-radius:14px; padding:12px 18px; cursor:pointer; font-weight:700; box-shadow: var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px; transition: transform .06s ease, box-shadow .2s ease, background .2s ease, color .2s ease}
+  .btn.primary{background:var(--accent); color:#fff}
+  .btn.outline{background:transparent; border:2px solid var(--brand-2); color:var(--accent-2)}
+  .btn.white{background:#fff; color:#0b1020; border:1px solid var(--card-border)}
+  .btn.primary:hover{transform: translateY(-1px); box-shadow:0 12px 30px rgba(59,130,246,.25)}
+  .btn.outline:hover{transform: translateY(-1px); box-shadow:0 12px 30px rgba(16,185,129,.18)}
+  .btn.white:hover{transform: translateY(-1px); box-shadow:0 12px 30px rgba(2,6,23,.12)}
 
-    /* Timeline */
-    .timeline{position:relative}
-    .timeline::before{content:""; position:absolute; left:18px; top:8px; bottom:8px; width:2px; background:#dbe6fb}
-    .tl-item{position:relative; padding-left:48px; margin:18px 0}
-    .tl-item::before{content:""; position:absolute; left:12px; top:6px; width:12px; height:12px; background:#4ea3ff; border:3px solid #fff; border-radius:999px; box-shadow:0 0 0 2px #cfe4ff}
-    .muted{color:#667799}
+  section{padding:56px 0}
+  h2{font-size:28px; margin:0 0 12px; color:var(--brand)}
+  p.lead{color:var(--ink-soft); margin:0 0 24px}
+  .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:20px}
+  .card{grid-column: span 12; background: var(--card-bg); border:1px solid var(--card-border); border-radius: var(--radius); box-shadow: var(--shadow); padding:24px}
+  @media(min-width: 760px){ .card.half{grid-column: span 6} }
 
-    /* Footer */
-    footer{padding:40px 0 80px; color:#667799}
-    .contact a{color:#0b3d7a; text-decoration:none}
+  .list{margin:0; padding:0 0 0 18px}
+  .tag{display:inline-block; background:var(--chip-bg); color:var(--chip-ink); border:1px solid var(--card-border); padding:6px 10px; border-radius:999px; font-size:12px; margin:6px 8px 0 0; font-weight:600}
 
-    /* Dark mode */
-    .toggle{position:fixed; right:16px; bottom:16px; z-index:5}
-    .toggle button{border:none; background:#0d142b; color:#cde2ff; padding:10px 12px; border-radius:10px; box-shadow: var(--shadow); cursor:pointer}
-    .dark body{background:#0b1020; color:#e9f2ff}
+  .timeline{position:relative}
+  .timeline::before{content:""; position:absolute; left:18px; top:8px; bottom:8px; width:2px; background:var(--card-border)}
+  .tl-item{position:relative; padding-left:48px; margin:18px 0}
+  .tl-item::before{content:""; position:absolute; left:12px; top:6px; width:12px; height:12px; background:var(--brand); border:3px solid var(--paper); border-radius:999px; box-shadow:0 0 0 2px var(--card-border)}
+  .tl-item strong{color:var(--ink)}
+  .muted{color:var(--ink-soft)}
+
+  footer{padding:40px 0 80px; color:var(--ink-soft)}
+  .contact a{color:var(--brand); text-decoration:none}
+  .toggle{position:fixed; right:16px; bottom:16px; z-index:5}
+  .toggle button{border:1px solid var(--card-border); background:var(--card-bg); color:var(--ink); padding:10px 12px; border-radius:10px; box-shadow: var(--shadow); cursor:pointer}
   </style>
   <script>
-    // Dark-mode simples com preferências do sistema
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if(prefersDark){ document.documentElement.classList.add('dark') }
-    function dl(file){ window.open(file, '_blank'); }
+  const key = 'pref-theme';
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem(key);
+  if((saved === 'dark') || (!saved && prefersDark)){
+    document.documentElement.classList.add('dark');
+  }
+  function toggleTheme(){
+    const el = document.documentElement;
+    const isDark = el.classList.toggle('dark');
+    localStorage.setItem(key, isDark ? 'dark' : 'light');
+  }
+  function dl(file){ window.open(file, '_blank'); }
   </script>
 </head>
 <body>
-  <div class="toggle"><button onclick="document.documentElement.classList.toggle('dark')">Alternar tema</button></div>
+  <div class="toggle"><button onclick="toggleTheme()">Alternar tema</button></div>
 
   <header class="hero">
     <div class="container">
@@ -101,7 +129,6 @@
   </header>
 
   <main class="container">
-    <!-- SOBRE MIM -->
     <section id="sobre">
       <h2>Sobre mim</h2>
       <p class="lead">Profissional de TI com mais de 6 anos em infraestrutura e operações. Atuei como líder técnico único de filial, garantindo disponibilidade total de <strong>ERP TOTVS RMS</strong>, <strong>PDV</strong>, servidores e conectividade. Tenho perfil prático, foco em estabilidade e eficiência, e experiência real em implantação, automação e treinamento de equipes.</p>
@@ -117,7 +144,6 @@
       </div>
     </section>
 
-    <!-- EXPERIÊNCIA -->
     <section id="experiencia">
       <h2>Experiência</h2>
       <div class="timeline">
@@ -149,7 +175,6 @@
       </div>
     </section>
 
-    <!-- CERTIFICAÇÕES E FORMAÇÃO -->
     <section id="certificacoes">
       <div class="grid">
         <div class="card half">
@@ -167,7 +192,6 @@
       </div>
     </section>
 
-    <!-- COMPETÊNCIAS -->
     <section id="competencias">
       <h2>Competências</h2>
       <div class="grid">
@@ -188,7 +212,6 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
       <h2>Contato</h2>
       <div class="card contact">
@@ -201,9 +224,6 @@
   <footer class="container">
     <small>© <span id="y"></span> Rafael Oliveira. Feito com HTML + CSS + JS. Hospedado no GitHub Pages.</small>
   </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
