@@ -109,7 +109,11 @@
       margin: 4px;
     }
 
-    section { padding: 64px 0; }
+    section { padding: 56px 0;
+  background: var(--paper);
+  border-top: 1px solid var(--card-border);
+}
+section:first-of-type { border-top: 0; }
     p.lead { color: var(--ink-soft); margin-bottom: 24px; }
 
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
