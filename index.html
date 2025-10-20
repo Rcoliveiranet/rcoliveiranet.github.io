@@ -3,279 +3,233 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rafael Oliveira – Infraestrutura de TI (Jaraguá do Sul)</title>
-  <meta name="description" content="Rafael Oliveira – Infraestrutura de TI, Operações e Liderança Técnica. Experiência com ERP TOTVS RMS, PDV, redes, servidores e cloud (Azure).">
+  <title>Rafael Oliveira | Infraestrutura de TI</title>
+  <meta name="description" content="Rafael Oliveira – Infraestrutura, Operações e Liderança Técnica. Experiência em ERP, PDV e Cloud (Azure)." />
   <meta name="author" content="Rafael Oliveira" />
-  <meta property="og:title" content="Rafael Oliveira | Infraestrutura de TI" />
-  <meta property="og:description" content="Infraestrutura de TI, Operações e Liderança Técnica. Experiência em ambientes de alta disponibilidade e projetos de varejo." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="og-image.png" />
-  <meta property="og:url" content="https://rcoliveiranet.github.io" />
   <link rel="icon" href="/favicon.ico" />
   <style>
-  :root{
-    --paper:#ffffff; --paper-2:#f6f8fb; --ink:#0b1020; --ink-soft:#445171;
-    --card-bg:#ffffff; --card-border:#e7ecf7;
-    --brand:#2563eb; --brand-2:#16a34a;
-    --chip-bg:#e9f4ff; --chip-ink:#0b3d7a;
-    --shadow:0 10px 30px rgba(2,6,23,.06); --radius:16px;
-  }
-  .dark:root{
-    --paper:#0b1020; --paper-2:#0f1629; --ink:#e8eeff; --ink-soft:#a9b7d6;
-    --card-bg:#0f1629; --card-border:#23314f;
-    --brand:#60a5fa; --brand-2:#6ee7b7;
-    --chip-bg:#13223d; --chip-ink:#d3e6ff;
-    --shadow:0 10px 30px rgba(0,0,0,.25);
-  }
-  html{scroll-behavior:smooth}
-  body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; background:var(--paper); color:var(--ink)}
-  .container{max-width:1040px; margin:0 auto; padding:0 20px}
-  /* HERO */
-  .hero{background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(37,99,235,.12), transparent 60%),
-      radial-gradient(900px 500px at -5% -10%, rgba(22,163,74,.12), transparent 60%),
-      linear-gradient(180deg, var(--paper) 0%, var(--paper) 100%);
-    padding:0 20px 0}
-  .badge{display:inline-flex; align-items:center; gap:8px; background:var(--paper-2); color:var(--ink-soft); border:1px solid var(--card-border); padding:6px 10px; border-radius:999px; font-size:12px}
-  h1{font-size:40px; line-height:1.2; margin:16px 0 8px}
-  .subtitle{font-size:18px; color:var(--ink-soft); max-width:880px}
-  .cta{display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 24px}
-  .btn{appearance:none; border:none; border-radius:12px; padding:12px 16px; cursor:pointer; font-weight:600; box-shadow:var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px}
-  .btn.primary{background:var(--brand); color:#fff}
-  .btn.outline{background:transparent; border:2px solid var(--brand-2); color:var(--ink)}
-  .btn.white{background:#fff; color:#0b1020; border:1px solid var(--card-border)}
-  .stats{display:flex; flex-wrap:wrap; gap:16px; margin:0 0 40px}
-  .stats span{background:var(--paper-2); border:1px solid var(--card-border); color:var(--ink); padding:8px 12px; border-radius:999px; font-weight:700; box-shadow:var(--shadow)}
-  .dark .stats span{background:var(--card-bg)}
-  /* SEÇÕES */
-  section{padding:56px 0}
-  h2{font-size:28px; margin:0 0 12px; color:var(--brand)}
-  h3{margin:24px 0 8px}
-  p.lead{color:var(--ink-soft); margin:0 0 24px}
-  .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:20px}
-  .card{grid-column: span 12; background: var(--card-bg); border:1px solid var(--card-border); border-radius: var(--radius); box-shadow: var(--shadow); padding:20px}
-  @media(min-width:760px){ .card.half{grid-column: span 6} }
-  .list{margin:0; padding:0 0 0 18px}
-  .tag{display:inline-block; background:var(--chip-bg); color:var(--chip-ink); border:1px solid var(--card-border); padding:4px 8px; border-radius:999px; font-size:12px; margin:4px 6px 0 0}
-  /* Timeline */
-  .timeline{position:relative}
-  .timeline::before{content:""; position:absolute; left:18px; top:8px; bottom:8px; width:2px; background:var(--card-border)}
-  .tl-item{position:relative; padding-left:48px; margin:18px 0}
-  .tl-item::before{content:""; position:absolute; left:12px; top:6px; width:12px; height:12px; background:var(--brand); border:3px solid var(--paper); border-radius:999px; box-shadow:0 0 0 2px var(--card-border)}
-  .tl-item strong{color:var(--ink)}
-  .muted{color:var(--ink-soft)}
-  /* Sobre expandido */
-  .about blockquote{background:var(--brand); color:#fff; padding:20px; border-radius:12px; margin:24px 0; font-style:italic}
-  .achievements{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:20px; margin:12px 0 8px}
-  .achievement{background:var(--card-bg); color:var(--ink); border:1px solid var(--card-border); border-radius:14px; padding:18px; box-shadow:var(--shadow)}
-  /* Projetos/Realizações com ícones */
-  .projects{display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:20px}
-  .project{background:var(--card-bg); border:1px solid var(--card-border); border-radius:14px; padding:20px; box-shadow:var(--shadow)}
-  .project h4{margin:6px 0 6px}
-  .project small{color:var(--ink-soft)}
-  /* Foto no hero */
-  .hero-photo{width:112px; height:112px; border-radius:999px; border:2px solid var(--card-border); box-shadow:var(--shadow); object-fit:cover; margin:0 0 12px}
-  /* Footer & contato */
-  footer{padding:40px 0 80px; color:var(--ink-soft)}
-  .contact a{color:var(--brand); text-decoration:none}
-  /* Toggle tema */
-  .toggle{position:fixed; right:16px; bottom:16px; z-index:5}
-  .toggle button{border:1px solid var(--card-border); background:var(--card-bg); color:var(--ink); padding:10px 12px; border-radius:10px; box-shadow: var(--shadow); cursor:pointer}
+    :root {
+      --paper: #ffffff;
+      --paper-2: #f6f8fb;
+      --ink: #0b1020;
+      --ink-soft: #445171;
+      --card-bg: #ffffff;
+      --card-border: #e7ecf7;
+      --brand: #2563eb;
+      --brand-2: #16a34a;
+      --chip-bg: #e9f4ff;
+      --chip-ink: #0b3d7a;
+      --shadow: 0 10px 30px rgba(2,6,23,.06);
+      --radius: 16px;
+    }
+
+    .dark:root {
+      --paper: #0b1020;
+      --paper-2: #0f1629;
+      --ink: #e8eeff;
+      --ink-soft: #a9b7d6;
+      --card-bg: #0f1629;
+      --card-border: #23314f;
+      --brand: #60a5fa;
+      --brand-2: #6ee7b7;
+      --chip-bg: #13223d;
+      --chip-ink: #d3e6ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(1000px 400px at 80% -10%, rgba(37,99,235,.12), transparent 60%),
+                  linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    h1 { font-size: 48px; margin: 0; color: var(--ink); }
+    h2 { font-size: 28px; margin: 0 0 16px; }
+    p { margin: 0 0 16px; }
+
+    .badge {
+      display: inline-block;
+      background: var(--paper-2);
+      color: var(--ink-soft);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .subtitle { color: var(--ink-soft); margin-top: 12px; }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 32px 0;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn.primary { background: var(--brand); color: #fff; }
+    .btn.outline { background: transparent; border: 2px solid var(--brand-2); color: var(--ink); }
+    .btn.white { background: #fff; border: 1px solid var(--card-border); color: var(--ink); }
+
+    .tag {
+      display: inline-block;
+      background: var(--chip-bg);
+      color: var(--chip-ink);
+      border: 1px solid var(--card-border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin: 4px;
+    }
+
+    section { padding: 64px 0; }
+    p.lead { color: var(--ink-soft); margin-bottom: 24px; }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+    .card { grid-column: span 12; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+    @media(min-width: 760px) { .card.half { grid-column: span 6; } }
+
+    footer { padding: 40px 0 80px; color: var(--ink-soft); text-align: center; }
+
+    /* RESPONSIVO */
+    @media(max-width: 720px) {
+      h1 { font-size: 36px; text-align: center; }
+    }
   </style>
-  <script>
-    const key='pref-theme';
-    const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const saved=localStorage.getItem(key);
-    if((saved==='dark')||(!saved&&prefersDark)){document.documentElement.classList.add('dark');}
-    function toggleTheme(){const el=document.documentElement; const isDark=el.classList.toggle('dark'); localStorage.setItem(key,isDark?'dark':'light');}
-    function dl(file){ window.open(file,'_blank'); }
-  </script>
 </head>
 <body>
-  <div class="toggle"><button onclick="toggleTheme()">Alternar tema</button></div>
-
-  <!-- HERO -->
   <header class="hero">
-    <!-- Banner topo -->
-</div>
-
     <div class="container">
-      <!-- Foto opcional: troque foto-rafael.png pelo seu arquivo -->
-      <img class="hero-photo" src="foto-rafael.png" alt="Rafael Oliveira" onerror="this.style.display='none'">
-      <span class="badge">Disponível • Presencial · Híbrido • Remoto</span>
-      <h1>Rafael Oliveira</h1>
-      <div style="text-align:center; margin-top:16px;">
-  <img src="foto-rafael.jpg" 
-       alt="Foto de Rafael Oliveira"
-       style="width:160px; height:160px; border-radius:50%; object-fit:cover; border:4px solid var(--brand); box-shadow:0 4px 20px rgba(0,0,0,0.15);">
-</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; margin-bottom:40px;">
+        <div style="text-align:right; max-width:480px;">
+          <h1>Rafael Oliveira</h1>
+          <p style="color:var(--ink-soft); font-size:18px; margin:10px 0 0;">
+            Infraestrutura | Operações | Liderança Técnica
+          </p>
+        </div>
 
+        <img src="foto-rafael.jpg"
+             alt="Foto de Rafael Oliveira"
+             style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid var(--brand); box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+      </div>
+
+      <span class="badge">Disponível • Presencial · Híbrido · Remoto</span>
       <p class="subtitle">Liderança técnica e operações para ambientes críticos</p>
 
       <div class="cta">
-        <a class="btn white" href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">Ver no LinkedIn</a>
-        <a class="btn primary" href="#contato">Falar comigo</a>
-        <a class="btn outline" onclick="dl('Rafael_Oliveira_Curriculo_PT_Final.pdf')">CV em PDF (PT)</a>
-        <a class="btn outline" onclick="dl('Rafael_Oliveira_CV_EN_Final.pdf')">Resume (EN)</a>
+        <a class="btn white" href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">🔗 Ver no LinkedIn</a>
+        <a class="btn primary" href="#contato">✉️ Falar comigo</a>
+        <a class="btn outline" onclick="window.open('Rafael_Oliveira_Curriculo_PT_Final.pdf','_blank')">⬇️ CV em PDF (PT)</a>
+        <a class="btn outline" onclick="window.open('Rafael_Oliveira_CV_EN_Final.pdf','_blank')">⬇️ Resume (EN)</a>
       </div>
 
-      <div class="stats">
-        <span>6+ anos</span>
-        <span>R$ 98MM</span>
-        <span>+400 treinados</span>
-        <span>32 PDVs</span>
+      <div class="stats" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+        <span class="tag">6+ anos</span>
+        <span class="tag">R$ 98MM</span>
+        <span class="tag">+400 treinados</span>
+        <span class="tag">32 PDVs</span>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- SOBRE MIM EXPANDIDO -->
-    <section class="about" id="sobre">
+    <section id="sobre">
       <h2>Sobre mim</h2>
-      <p>Sou Rafael Oliveira, profissional de TI com mais de 6 anos de experiência em infraestrutura e operações, com foco em liderança técnica e gestão de ambientes de alta disponibilidade.</p>
-      <p>Acredito que o verdadeiro papel da TI é garantir que o negócio funcione com estabilidade, segurança e eficiência, sem que o usuário perceba o esforço por trás. É isso que me move: criar infraestruturas invisíveis, mas essenciais, que simplesmente funcionam.</p>
+      <p class="lead">Sou Rafael Oliveira, profissional de TI com mais de 6 anos de experiência em infraestrutura e operações, com foco em liderança técnica e gestão de ambientes de alta disponibilidade.</p>
+      <p>Acredito que o verdadeiro papel da TI é garantir que o negócio funcione com estabilidade, segurança e eficiência — sem que o usuário perceba o esforço por trás. É isso que me move: criar infraestruturas invisíveis, mas essenciais, que simplesmente funcionam.</p>
 
       <h3>Minha jornada</h3>
-      <p>Comecei minha carreira em TI aos 18 anos, quando descobri que tinha facilidade tanto para tecnologia quanto para ensinar pessoas. Em 2012, atuei como consultor autônomo atendendo pequenas empresas e aprendendo na prática os desafios reais da infraestrutura.</p>
-      <p>Em 2017, assumi o desafio de ser o responsável técnico por uma filial de grande porte no varejo. Foram 32 PDVs, mais de 400 usuários e uma inauguração de R$ 98MM com zero downtime. Cada detalhe foi planejado — e o resultado foi um ambiente 100% estável no dia da abertura.</p>
-
-      <h3>O que eu faço (e como faço diferente)</h3>
-      <ul>
-        <li><strong>Técnica sólida:</strong> ERP TOTVS RMS, PDV, redes, servidores e cloud híbrida — eficiência e estabilidade em primeiro lugar.</li>
-        <li><strong>Visão de negócio:</strong> disponibilidade e continuidade alinhadas a resultado e operação.</li>
-        <li><strong>Desenvolvimento de pessoas:</strong> +400 colaboradores treinados, menos chamados recorrentes e mais autonomia.</li>
-      </ul>
-
-      <h3>Principais realizações</h3>
-      <div class="achievements">
-        <div class="achievement">
-          <h4>🏗️ Inauguração de filial de R$ 98MM</h4>
-          <p>Responsável técnico pela ativação completa da infraestrutura de TI, garantindo 100% de disponibilidade operacional.</p>
-        </div>
-        <div class="achievement">
-          <h4>👥 Capacitação de +400 colaboradores</h4>
-          <p>Treinamentos estruturados que reduziram chamados recorrentes e aumentaram a autonomia da equipe.</p>
-        </div>
-        <div class="achievement">
-          <h4>📊 Automação de processos operacionais</h4>
-          <p>Criação de soluções no Google Sheets para indicadores e rotinas de gestão, reduzindo trabalho manual.</p>
-        </div>
-      </div>
-
-      <h3>Evolução contínua</h3>
-      <p>Em ampliação de atuação para ambientes cloud — certificação Microsoft Azure (AZ-900) em andamento — visando arquiteturas híbridas escaláveis.</p>
-
-      <h3>Minha filosofia</h3>
-      <blockquote>“Infraestrutura de TI que funciona é aquela que você não percebe. Quando tudo está no ar e as pessoas trabalham sem pensar na tecnologia — é aí que fazemos nosso melhor trabalho.”</blockquote>
+      <p>Comecei minha carreira em TI aos 18 anos, com curiosidade e vontade de resolver problemas reais. De lá pra cá, atuei como consultor, analista e supervisor, liderando operações críticas e equipes em ambientes de alta demanda. O ponto alto foi ser responsável pela infraestrutura de uma filial de varejo de R$ 98MM — com 31 checkouts e zero downtime na inauguração.</p>
+      <p>Hoje, busco aplicar essa experiência em novos desafios, unindo técnica, gestão e foco em resultados concretos.</p>
     </section>
 
-    <!-- PROJETOS & REALIZAÇÕES -->
-    <section id="projetos">
-      <h2>Projetos e Realizações</h2>
-      <div class="projects">
-        <div class="project">
-          <h4>🛒 Operação varejo 24/7</h4>
-          <small>Ambiente crítico ERP/PDV</small>
-          <p>Gestão de disponibilidade para operação contínua com múltiplos sistemas integrados e alto volume transacional.</p>
-        </div>
-        <div class="project">
-          <h4>☁️ Jornada para Cloud</h4>
-          <small>Azure Fundamentals (AZ-900)</small>
-          <p>Transição gradual para arquiteturas híbridas com foco em segurança, custo e continuidade.</p>
-        </div>
-        <div class="project">
-          <h4>📈 Indicadores operacionais</h4>
-          <small>Automação com Sheets</small>
-          <p>Criação de dashboards e rotinas que reduziram horas manuais e deram visibilidade para gestão.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIÊNCIA -->
     <section id="experiencia">
       <h2>Experiência</h2>
-      <div class="timeline">
-        <div class="tl-item card">
-          <strong>Supervisor de TI</strong> — <span class="muted">Grupo Giassi • Jun/2017 – Out/2023 • Jaraguá do Sul/SC</span>
-          <ul class="list">
-            <li>Responsável técnico na inauguração de filial de <strong>R$ 98MM</strong> com <strong>zero downtime</strong>.</li>
-            <li>Gestão de <strong>32 PDVs</strong>, servidores, <strong>CFTV (+250 câmeras)</strong>, <strong>VoIP</strong> e +40 estações.</li>
-            <li>Treinamento de <strong>+400 usuários</strong>, reduzindo chamados recorrentes.</li>
-            <li>Automação de indicadores e processos em Google Sheets.</li>
-            <li>Atuação 24/7 em incidentes críticos e continuidade operacional.</li>
-          </ul>
-        </div>
-        <div class="tl-item card">
-          <strong>Analista de Sistemas</strong> — <span class="muted">Seti Tecnologia • Abr/2016 – Out/2016 • Jaraguá do Sul/SC</span>
-          <ul class="list">
-            <li>Suporte N2/N3 em <strong>segurança</strong> e <strong>redes</strong> para ~20 clientes.</li>
-            <li>Configuração de <strong>Firewalls</strong>, <strong>VPNs</strong>, <strong>QoS</strong> e e-mail.</li>
-            <li>Troubleshooting avançado de redes corporativas.</li>
-          </ul>
-        </div>
-        <div class="tl-item card">
-          <strong>Consultor de TI (Freelancer)</strong> — <span class="muted">2012 – Presente • Sob demanda</span>
-          <ul class="list">
-            <li>Consultoria de infraestrutura e suporte para PMEs.</li>
-            <li>Implantações e apoio técnico em aberturas de lojas.</li>
-          </ul>
-        </div>
+      <div class="card">
+        <strong>Supervisor de TI — Grupo Giassi</strong> (Jun/2017 – Out/2023, Jaraguá do Sul/SC)
+        <ul>
+          <li>Responsável técnico pela infraestrutura completa da filial (PDVs, servidores, rede, CFTV e telefonia).</li>
+          <li>Treinamento de +400 colaboradores, reduzindo chamados recorrentes.</li>
+          <li>Automação de processos e relatórios via Google Sheets.</li>
+          <li>Atuação 24/7 em incidentes críticos e continuidade operacional.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Analista de Sistemas — Seti Tecnologia</strong> (Abr/2016 – Out/2016, Jaraguá do Sul/SC)
+        <ul>
+          <li>Suporte N2/N3 em segurança e redes corporativas.</li>
+          <li>Configuração de Firewalls, VPNs e QoS.</li>
+          <li>Atendimento a cerca de 20 clientes corporativos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Consultor de TI (Freelancer)</strong> (2012 – Presente)
+        <ul>
+          <li>Consultoria em infraestrutura e suporte para PMEs.</li>
+          <li>Implantações e apoio técnico em aberturas de lojas.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- CERTIFICAÇÕES E FORMAÇÃO -->
     <section id="certificacoes">
       <div class="grid">
         <div class="card half">
           <h2>Certificações</h2>
-          <ul class="list">
-            <li>Microsoft Certified: <strong>Azure Fundamentals (AZ-900)</strong> — em andamento</li>
+          <ul>
+            <li>Microsoft Certified: Azure Fundamentals (AZ-900) — em andamento</li>
           </ul>
         </div>
         <div class="card half">
           <h2>Formação</h2>
-          <ul class="list">
-            <li>Tecnólogo em <strong>Gestão da Tecnologia da Informação</strong> — SENAC</li>
+          <ul>
+            <li>Tecnólogo em Gestão da Tecnologia da Informação — SENAC</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- COMPETÊNCIAS -->
-    <section id="competencias">
-      <h2>Competências</h2>
-      <div class="grid">
-        <div class="card half">
-          <ul class="list">
-            <li>Infraestrutura local e híbrida (servidores, redes, cloud)</li>
-            <li>Ambientes de alta disponibilidade (ERP TOTVS RMS, PDV, BI)</li>
-            <li>Implantação e manutenção de sistemas críticos</li>
-          </ul>
-        </div>
-        <div class="card half">
-          <ul class="list">
-            <li>Treinamento de usuários e liderança técnica</li>
-            <li>Planejamento, documentação e melhoria de processos</li>
-            <li>Segurança de rede: Firewalls, VPNs, QoS</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
     <section id="contato">
       <h2>Contato</h2>
-      <div class="card contact">
+      <div class="card">
         <p>Vamos conversar. Estou disponível para oportunidades em infraestrutura, operações e liderança técnica.</p>
-        <p>✉️ <a href="mailto:rcoliveiranet@gmail.com">rcoliveiranet@gmail.com</a> &nbsp; | &nbsp; ☎️ (47) 9 9242-5067 &nbsp; | &nbsp; 🔗 <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">linkedin.com/in/oliveira-ti</a></p>
+        <p>✉️ <a href="mailto:rcoliveiranet@gmail.com">rcoliveiranet@gmail.com</a> | ☎️ (47) 9 9242-5067 | 🔗 <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank">linkedin.com/in/oliveira-ti</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="container">
-    <small>© <span id="y"></span> Rafael Oliveira. Feito com HTML + CSS + JS. Hospedado no GitHub Pages.</small>
+  <footer>
+    <small>© <span id="year"></span> Rafael Oliveira. Feito com HTML + CSS. Hospedado no GitHub Pages.</small>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
