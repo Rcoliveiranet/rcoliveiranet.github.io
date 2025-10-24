@@ -1,239 +1,966 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rafael Oliveira | Infraestrutura de TI</title>
-  <meta name="description" content="Rafael Oliveira – Infraestrutura, Operações e Liderança Técnica. Experiência em ERP, PDV e Cloud (Azure)." />
-  <meta name="author" content="Rafael Oliveira" />
-  <link rel="icon" href="/favicon.ico" />
-  <style>
-    :root {
-      --paper: #ffffff;
-      --paper-2: #f6f8fb;
-      --ink: #0b1020;
-      --ink-soft: #445171;
-      --card-bg: #ffffff;
-      --card-border: #e7ecf7;
-      --brand: #2563eb;
-      --brand-2: #16a34a;
-      --chip-bg: #e9f4ff;
-      --chip-ink: #0b3d7a;
-      --shadow: 0 10px 30px rgba(2,6,23,.06);
-      --radius: 16px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Oliveira | Especialista em Infraestrutura de TI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .dark:root {
-      --paper: #0b1020;
-      --paper-2: #0f1629;
-      --ink: #e8eeff;
-      --ink-soft: #a9b7d6;
-      --card-bg: #0f1629;
-      --card-border: #23314f;
-      --brand: #60a5fa;
-      --brand-2: #6ee7b7;
-      --chip-bg: #13223d;
-      --chip-ink: #d3e6ff;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
+        :root {
+            --primary: #00d4ff;
+            --secondary: #0066ff;
+            --dark: #0a0e27;
+            --dark-light: #1a1f3a;
+            --text: #e0e6ed;
+            --text-dim: #a0aec0;
+            --accent: #00ffaa;
+        }
 
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* HERO */
-    .hero {
-      background: radial-gradient(1000px 400px at 80% -10%, rgba(37,99,235,.12), transparent 60%),
-                  linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-      padding: 60px 20px;
-      text-align: center;
-    }
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1f3a 50%, var(--dark) 100%);
+        }
 
-    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-    h1 { font-size: 48px; margin: 0; color: var(--ink); }
-    h2 { font-size: 28px; margin: 0 0 16px; }
-    p { margin: 0 0 16px; }
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--primary)20 1px, transparent 1px),
+                linear-gradient(90deg, var(--primary)20 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.05;
+            z-index: -1;
+        }
 
-    .badge {
-      display: inline-block;
-      background: var(--paper-2);
-      color: var(--ink-soft);
-      border: 1px solid var(--card-border);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 24px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .subtitle { color: var(--ink-soft); margin-top: 12px; }
+        /* Header */
+        header {
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
 
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 32px 0;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .btn {
-      appearance: none;
-      border: none;
-      border-radius: 10px;
-      padding: 12px 20px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-    .btn.primary { background: var(--brand); color: #fff; }
-    .btn.outline { background: transparent; border: 2px solid var(--brand-2); color: var(--ink); }
-    .btn.white { background: #fff; border: 1px solid var(--card-border); color: var(--ink); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-    .tag {
-      display: inline-block;
-      background: var(--chip-bg);
-      color: var(--chip-ink);
-      border: 1px solid var(--card-border);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin: 4px;
-    }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-    section { padding: 56px 0;
-  background: var(--paper);
-  border-top: 1px solid var(--card-border);
-}
-section:first-of-type { border-top: 0; }
-    p.lead { color: var(--ink-soft); margin-bottom: 24px; }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
 
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
-    .card { grid-column: span 12; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
-    @media(min-width: 760px) { .card.half { grid-column: span 6; } }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
 
-    footer { padding: 40px 0 80px; color: var(--ink-soft); text-align: center; }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    /* RESPONSIVO */
-    @media(max-width: 720px) {
-      h1 { font-size: 36px; text-align: center; }
-    }
-  </style>
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid var(--dark);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-company {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-achievements {
+            list-style: none;
+        }
+
+        .timeline-achievements li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-achievements li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .skill-category-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .cert-status {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 170, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-light);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            color: var(--text-dim);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 40px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--dark-light);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                transition: right 0.3s;
+                border-left: 1px solid rgba(0, 212, 255, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; margin-bottom:40px;">
-        <div style="text-align:right; max-width:480px;">
-          <h1>Rafael Oliveira</h1>
-          <p style="color:var(--ink-soft); font-size:18px; margin:10px 0 0;">
-            Infraestrutura | Operações | Liderança Técnica
-          </p>
+    <div class="bg-animation"></div>
+    <div class="bg-grid"></div>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Rafael Oliveira</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#experiencia" onclick="closeMenu()">Experiência</a></li>
+                <li><a href="#habilidades" onclick="closeMenu()">Habilidades</a></li>
+                <li><a href="#certificacoes" onclick="closeMenu()">Certificações</a></li>
+                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content container">
+                <h1 class="hero-title">Rafael Oliveira</h1>
+                <p class="hero-subtitle">Especialista em Infraestrutura de TI | Liderança Técnica</p>
+                <p class="hero-description">
+                    +6 anos garantindo estabilidade, segurança e eficiência em ambientes de alta disponibilidade. 
+                    Experiência comprovada liderando operações críticas em varejo, com foco em resultados mensuráveis e zero downtime.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+                    <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="sobre" class="container">
+            <h2 class="section-title">Impacto em Números</h2>
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">400+</div>
+                    <div class="stat-label">Colaboradores Treinados</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">R$ 98MM</div>
+                    <div class="stat-label">Projeto de Inauguração</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">32</div>
+                    <div class="stat-label">PDVs Gerenciados</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experiencia" class="container">
+            <h2 class="section-title">Trajetória Profissional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017 — 2023</div>
+                        <h3 class="timeline-title">Supervisor de TI (de facto)</h3>
+                        <div class="timeline-company">Grupo Giassi Supermercados</div>
+                        <p class="timeline-description">
+                            Responsável técnico pela infraestrutura completa da filial de Jaraguá do Sul, 
+                            garantindo operação 24/7 e liderando equipe técnica.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Infraestrutura de inauguração R$ 98MM com 100% uptime no dia da abertura</li>
+                            <li>Gestão de 32 PDVs, 250 câmeras CFTV, 15 balanças e toda infraestrutura de rede</li>
+                            <li>Treinamento de +400 colaboradores, reduzindo chamados recorrentes em 35%</li>
+                            <li>Automação de 15+ processos via Google Sheets, economizando 20h/mês</li>
+                            <li>Suporte N2/N3 em ERP TOTVS RMS e PDV Visual Mix</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2016</div>
+                        <h3 class="timeline-title">Analista de Sistemas</h3>
+                        <div class="timeline-company">Seti Tecnologia</div>
+                        <p class="timeline-description">
+                            Foco em segurança e redes corporativas, atendendo cerca de 20 clientes empresariais.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Configuração e otimização de Firewalls S4, VPN e QoS</li>
+                            <li>Suporte técnico N2/N3 para ambientes corporativos</li>
+                            <li>Gestão de servidores de e-mail e políticas de segurança</li>
+                            <li>Monitoramento e resolução de incidentes críticos</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2008 — Presente</div>
+                        <h3 class="timeline-title">Consultor Autônomo em TI</h3>
+                        <div class="timeline-company">Infraestrutura & Projetos</div>
+                        <p class="timeline-description">
+                            Projetos de infraestrutura, inaugurações de lojas e implantações de rede para grandes varejistas.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Parceria com Capgemini, Melhor Infra, Renner, Youcom e Giassi</li>
+                            <li>Implantações de rede e PDVs em aberturas de lojas</li>
+                            <li>Manutenção, suporte técnico e consultoria para PMEs</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="habilidades" class="container">
+            <h2 class="section-title">Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🖥️ Infraestrutura & Redes</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Servidores Windows/Linux</span>
+                        <span class="skill-tag">Virtualização</span>
+                        <span class="skill-tag">Redes TCP/IP</span>
+                        <span class="skill-tag">VPN</span>
+                        <span class="skill-tag">Firewall</span>
+                        <span class="skill-tag">QoS</span>
+                        <span class="skill-tag">CFTV</span>
+                        <span class="skill-tag">Wi-Fi Corporativo</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">☁️ Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">Backup & Recovery</span>
+                        <span class="skill-tag">Monitoramento</span>
+                        <span class="skill-tag">Automação</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">💼 Sistemas Corporativos</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ERP TOTVS RMS</span>
+                        <span class="skill-tag">PDV Visual Mix</span>
+                        <span class="skill-tag">Service Desk</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Google Workspace</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🎯 Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Liderança Técnica</span>
+                        <span class="skill-tag">Gestão de Equipes</span>
+                        <span class="skill-tag">Resolução de Problemas</span>
+                        <span class="skill-tag">Treinamento</span>
+                        <span class="skill-tag">Comunicação</span>
+                        <span class="skill-tag">Gestão de Crises</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certificacoes" class="container">
+            <h2 class="section-title">Certificações & Formação</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🎓</div>
+                    <h3 class="cert-title">Gestão da Tecnologia da Informação</h3>
+                    <p class="cert-issuer">SENAC</p>
+                    <span class="cert-status">Concluído</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">☁️</div>
+                    <h3 class="cert-title">Microsoft Azure Fundamentals (AZ-900)</h3>
+                    <p class="cert-issuer">Microsoft</p>
+                    <span class="cert-status">Em andamento</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🔧</div>
+                    <h3 class="cert-title">Analista de Infraestrutura de TI</h3>
+                    <p class="cert-issuer">Certificação Profissional</p>
+                    <span class="cert-status">Concluído</span>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">📊</div>
+                    <h3 class="cert-title">Analista de Projetos de TI</h3>
+                    <p class="cert-issuer">Certificação Profissional</p>
+                    <span class="cert-status">Concluído</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="container">
+            <h2 class="section-title">Vamos Conversar?</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Busco posições como <strong style="color: var(--primary);">Analista Sênior, Especialista ou Coordenador de Infraestrutura/Operações</strong>. 
+                Aberto a remoto, híbrido ou presencial em Jaraguá do Sul.
+            </p>
+            <div class="contact-grid">
+                <a href="mailto:rcoliveiranet@gmail.com" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">E-mail</div>
+                    <div class="contact-value">rcoliveiranet@gmail.com</div>
+                </a>
+
+                <a href="https://wa.me/5547992425067" target="_blank" class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">WhatsApp</div>
+                    <div class="contact-value">(47) 9 9242-5067</div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">/in/oliveira-ti</div>
+                </a>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Localização</div>
+                    <div class="contact-value">Jaraguá do Sul, SC</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Rafael Oliveira | Desenvolvido para destacar excelência em TI</p>
         </div>
+    </footer>
 
-        <img src="foto-rafael.jpg"
-             alt="Foto de Rafael Oliveira"
-             style="width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid var(--brand); box-shadow:0 4px 20px rgba(0,0,0,0.2);">
-      </div>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
 
-      <span class="badge">Disponível • Presencial · Híbrido · Remoto</span>
-      <p class="subtitle">Liderança técnica e operações para ambientes críticos</p>
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
 
-      <div class="cta">
-        <a class="btn white" href="https://www.linkedin.com/in/oliveira-ti" target="_blank" rel="noopener">🔗 Ver no LinkedIn</a>
-        <a class="btn primary" href="#contato">✉️ Falar comigo</a>
-        <a class="btn outline" onclick="window.open('Rafael_Oliveira_Curriculo_PT_Final.pdf','_blank')">⬇️ CV em PDF (PT)</a>
-        <a class="btn outline" onclick="window.open('Rafael_Oliveira_CV_EN_Final.pdf','_blank')">⬇️ Resume (EN)</a>
-      </div>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-      <div class="stats" style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-        <span class="tag">6+ anos</span>
-        <span class="tag">R$ 98MM</span>
-        <span class="tag">+400 treinados</span>
-        <span class="tag">32 PDVs</span>
-      </div>
-    </div>
-  </header>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-  <main class="container">
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p class="lead">Sou Rafael Oliveira, profissional de TI com mais de 6 anos de experiência em infraestrutura e operações, com foco em liderança técnica e gestão de ambientes de alta disponibilidade.</p>
-      <p>Acredito que o verdadeiro papel da TI é garantir que o negócio funcione com estabilidade, segurança e eficiência — sem que o usuário perceba o esforço por trás. É isso que me move: criar infraestruturas invisíveis, mas essenciais, que simplesmente funcionam.</p>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-      <h3>Minha jornada</h3>
-      <p>Comecei minha carreira em TI aos 18 anos, com curiosidade e vontade de resolver problemas reais. De lá pra cá, atuei como consultor, analista e supervisor, liderando operações críticas e equipes em ambientes de alta demanda. O ponto alto foi ser responsável pela infraestrutura de uma filial de varejo de R$ 98MM — com 31 checkouts e zero downtime na inauguração.</p>
-      <p>Hoje, busco aplicar essa experiência em novos desafios, unindo técnica, gestão e foco em resultados concretos.</p>
-    </section>
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
 
-    <section id="experiencia">
-      <h2>Experiência</h2>
-      <div class="card">
-        <strong>Supervisor de TI — Grupo Giassi</strong> (Jun/2017 – Out/2023, Jaraguá do Sul/SC)
-        <ul>
-          <li>Responsável técnico pela infraestrutura completa da filial (PDVs, servidores, rede, CFTV e telefonia).</li>
-          <li>Treinamento de +400 colaboradores, reduzindo chamados recorrentes.</li>
-          <li>Automação de processos e relatórios via Google Sheets.</li>
-          <li>Atuação 24/7 em incidentes críticos e continuidade operacional.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Analista de Sistemas — Seti Tecnologia</strong> (Abr/2016 – Out/2016, Jaraguá do Sul/SC)
-        <ul>
-          <li>Suporte N2/N3 em segurança e redes corporativas.</li>
-          <li>Configuração de Firewalls, VPNs e QoS.</li>
-          <li>Atendimento a cerca de 20 clientes corporativos.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Consultor de TI (Freelancer)</strong> (2012 – Presente)
-        <ul>
-          <li>Consultoria em infraestrutura e suporte para PMEs.</li>
-          <li>Implantações e apoio técnico em aberturas de lojas.</li>
-        </ul>
-      </div>
-    </section>
+        // Animated background particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = 'var(--primary)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.opacity = '0';
+            particle.style.zIndex = '-1';
+            
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            
+            document.body.appendChild(particle);
+            
+            // Fade in
+            setTimeout(() => {
+                particle.style.transition = 'opacity 2s';
+                particle.style.opacity = '0.3';
+            }, 100);
+            
+            // Fade out and remove
+            setTimeout(() => {
+                particle.style.opacity = '0';
+                setTimeout(() => particle.remove(), 2000);
+            }, 3000);
+        }
 
-    <section id="certificacoes">
-      <div class="grid">
-        <div class="card half">
-          <h2>Certificações</h2>
-          <ul>
-            <li>Microsoft Certified: Azure Fundamentals (AZ-900) — em andamento</li>
-          </ul>
-        </div>
-        <div class="card half">
-          <h2>Formação</h2>
-          <ul>
-            <li>Tecnólogo em Gestão da Tecnologia da Informação — SENAC</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+        // Create particles periodically
+        setInterval(createParticle, 1000);
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <div class="card">
-        <p>Vamos conversar. Estou disponível para oportunidades em infraestrutura, operações e liderança técnica.</p>
-        <p>✉️ <a href="mailto:rcoliveiranet@gmail.com">rcoliveiranet@gmail.com</a> | ☎️ (47) 9 9242-5067 | 🔗 <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank">linkedin.com/in/oliveira-ti</a></p>
-      </div>
-    </section>
-  </main>
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
 
-  <footer>
-    <small>© <span id="year"></span> Rafael Oliveira. Feito com HTML + CSS. Hospedado no GitHub Pages.</small>
-  </footer>
+        // Trigger counter animation when stats come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent;
+                        if (text.includes('+')) {
+                            const value = parseInt(text.replace('+', ''));
+                            num.textContent = '0';
+                            animateCounter(num, value);
+                            setTimeout(() => num.textContent = value + '+', 2000);
+                        } else if (text.includes('R)) {
+                            // Keep as is for currency
+                        } else {
+                            const value = parseInt(text);
+                            if (!isNaN(value)) {
+                                num.textContent = '0';
+                                animateCounter(num, value);
+                            }
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        const statsSection = document.querySelector('.stats-grid');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
