@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael Oliveira | Especialista em Infraestrutura de TI</title>
+    <title>Rafael Oliveira | Profissional de TI | Infraestrutura, Liderança e Inovação</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Rafael Oliveira - Especialista em Infraestrutura de TI com +6 anos de experiência em Jaraguá do Sul. Liderança técnica, operações críticas e gestão de ambientes de alta disponibilidade.">
-    <meta name="keywords" content="Rafael Oliveira, Infraestrutura TI, Analista TI, Coordenador TI, Jaraguá do Sul, Azure, TOTVS, Supervisor TI">
+    <meta name="description" content="Rafael Oliveira - Profissional de TI com +6 anos de experiência em Infraestrutura, Liderança Técnica, E&T e Inovação. Especialista em operações críticas, transformação digital e desenvolvimento de equipes. Jaraguá do Sul - SC.">
+    <meta name="keywords" content="Rafael Oliveira, Profissional TI, Infraestrutura, Liderança Técnica, Analista TI, Coordenador TI, Supervisor TI, Azure, TOTVS, Jaraguá do Sul, E&T, Transformação Digital">
     <meta name="author" content="Rafael Oliveira">
+    <meta name="theme-color" content="#00d4ff">
     
     <!-- Open Graph (quando compartilha no WhatsApp/Facebook/LinkedIn) -->
-    <meta property="og:title" content="Rafael Oliveira | Especialista em Infraestrutura de TI">
-    <meta property="og:description" content="Profissional de TI com +6 anos de experiência em liderança técnica e operações críticas. Responsável por infraestrutura de R$ 98MM com zero downtime.">
+    <meta property="og:title" content="Rafael Oliveira | Profissional de TI | Infraestrutura & Liderança">
+    <meta property="og:description" content="Profissional de TI com +6 anos em infraestrutura, liderança técnica e inovação. Resultados: 70% conformidade, 95% redução de relatórios, 400+ treinados. Aberto para CLT, consultoria e projetos.">
     <meta property="og:image" content="https://rcoliveiranet.github.io/foto-rafael.jpg">
     <meta property="og:url" content="https://rcoliveiranet.github.io">
     <meta property="og:type" content="website">
@@ -22,8 +23,8 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rafael Oliveira | Especialista em Infraestrutura de TI">
-    <meta name="twitter:description" content="Profissional de TI com +6 anos de experiência em liderança técnica">
+    <meta name="twitter:title" content="Rafael Oliveira | Profissional de TI">
+    <meta name="twitter:description" content="Infraestrutura, Liderança Técnica e Inovação. +6 anos de experiência em operações críticas.">
     <meta name="twitter:image" content="https://rcoliveiranet.github.io/foto-rafael.jpg">
     
     <style>
@@ -41,6 +42,8 @@
             --text: #e0e6ed;
             --text-dim: #a0aec0;
             --accent: #00ffaa;
+            --success: #00ff88;
+            --warning: #ffaa00;
         }
 
         body {
@@ -114,6 +117,7 @@
             text-decoration: none;
             transition: color 0.3s;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
@@ -146,7 +150,7 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -172,7 +176,7 @@
 
         .hero-title {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -180,9 +184,17 @@
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
             color: var(--text-dim);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-style: italic;
         }
 
         .hero-description {
@@ -190,6 +202,9 @@
             color: var(--text);
             margin-bottom: 3rem;
             line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
@@ -268,6 +283,46 @@
             color: var(--text);
         }
 
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .expertise-card {
+            background: var(--dark-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .expertise-description {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -291,15 +346,85 @@
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: bold;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
             color: var(--text-dim);
-            font-size: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-card {
+            background: var(--dark-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .case-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .case-description {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .case-result {
+            background: rgba(0, 255, 170, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .case-result-title {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .case-result-value {
+            color: var(--text);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .case-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
         .timeline {
@@ -358,6 +483,7 @@
             color: var(--primary);
             font-weight: bold;
             margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .timeline-title {
@@ -375,6 +501,7 @@
         .timeline-description {
             color: var(--text-dim);
             margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
         .timeline-achievements {
@@ -386,6 +513,7 @@
             position: relative;
             margin-bottom: 0.5rem;
             color: var(--text);
+            font-size: 0.95rem;
         }
 
         .timeline-achievements li::before {
@@ -406,15 +534,18 @@
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--primary);
         }
 
         .skill-category-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: 600;
         }
 
         .skill-tags {
@@ -451,27 +582,35 @@
             border-radius: 12px;
             border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s;
+            text-align: center;
         }
 
         .cert-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
         .cert-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cert-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .cert-issuer {
             color: var(--primary);
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .cert-status {
@@ -500,6 +639,7 @@
             border: 1px solid rgba(0, 212, 255, 0.1);
             transition: all 0.3s;
             text-decoration: none;
+            color: inherit;
         }
 
         .contact-card:hover {
@@ -535,6 +675,7 @@
 
         footer p {
             color: var(--text-dim);
+            font-size: 0.95rem;
         }
 
         @keyframes fadeInUp {
@@ -558,7 +699,7 @@
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .nav-links {
@@ -585,6 +726,10 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .expertise-card {
+                padding: 2rem;
             }
         }
 
@@ -631,6 +776,8 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#expertise" onclick="closeMenu()">Expertise</a></li>
+                <li><a href="#cases" onclick="closeMenu()">Cases</a></li>
                 <li><a href="#experiencia" onclick="closeMenu()">Experiência</a></li>
                 <li><a href="#habilidades" onclick="closeMenu()">Habilidades</a></li>
                 <li><a href="#certificacoes" onclick="closeMenu()">Certificações</a></li>
@@ -645,27 +792,79 @@
             <div class="hero-content container">
                 <img src="foto-rafael.jpg" alt="Rafael Oliveira" class="hero-photo">
                 <h1 class="hero-title">Rafael Oliveira</h1>
-                <p class="hero-subtitle">Especialista em Infraestrutura de TI | Liderança Técnica</p>
+                <p class="hero-subtitle">Profissional de TI | Infraestrutura, Liderança & Inovação</p>
+                <p class="hero-tagline">Transformando operações críticas em resultados mensuráveis</p>
                 <p class="hero-description">
-                    +6 anos garantindo estabilidade, segurança e eficiência em ambientes de alta disponibilidade. 
-                    Experiência comprovada liderando operações críticas, com foco em resultados mensuráveis e zero downtime.
+                    +6 anos de experiência em infraestrutura, operações críticas e liderança técnica. 
+                    Especialista em transformação digital, automação de processos e desenvolvimento de equipes. 
+                    Aberto para oportunidades como Analista, Especialista, Coordenador ou Líder de TI.
                 </p>
                 <div class="cta-buttons">
-                    <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+                    <a href="#contato" class="btn btn-primary">Entrar em Contato</a>
                     <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" class="btn btn-secondary">LinkedIn</a>
                 </div>
             </div>
         </section>
 
-        <!-- About & Stats Section -->
+        <!-- About & Expertise Section -->
         <section id="sobre" class="container">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-intro">
-                Cresci em Sorocaba (SP) e, aos 18 anos, me mudei para Santa Catarina em busca de novas oportunidades. 
-                Construí minha carreira em TI do zero, começando com manutenção de computadores e evoluindo até liderar 
-                operações críticas em ambientes corporativos. Casado e pai de dois filhos, valorizo estabilidade, 
-                aprendizado contínuo e resultados reais. Minha trajetória passa por indústria, varejo e consultoria — 
-                sempre com foco em garantir que a tecnologia funcione de forma invisível, mas essencial.
+                Profissional de TI com trajetória sólida em infraestrutura, operações críticas e liderança técnica. 
+                Começei aos 15 anos prestando serviços de manutenção e evoluí para liderar operações 24/7 com 400+ usuários. 
+                Casado e pai de dois filhos, valorizo estabilidade, aprendizado contínuo e resultados reais. 
+                Minha expertise combina execução técnica, resolução de problemas complexos e alinhamento com objetivos de negócio.
+            </div>
+
+            <h2 class="section-title">Áreas de Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">🖥️</div>
+                    <div class="expertise-title">Infraestrutura & Operações</div>
+                    <div class="expertise-description">
+                        Gestão de ambientes críticos 24/7, servidores, redes, firewall, CFTV e operações de alta disponibilidade com zero downtime.
+                    </div>
+                </div>
+
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">👥</div>
+                    <div class="expertise-title">Liderança Técnica</div>
+                    <div class="expertise-description">
+                        Desenvolvimento de equipes, treinamento de 400+ colaboradores, formação de multiplicadores e gestão de projetos.
+                    </div>
+                </div>
+
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">⚡</div>
+                    <div class="expertise-title">Inovação & Automação</div>
+                    <div class="expertise-description">
+                        Automação de processos, sistemas inteligentes com resultados mensuráveis (70% conformidade, 95% redução de relatórios).
+                    </div>
+                </div>
+
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">☁️</div>
+                    <div class="expertise-title">Cloud & Transformação</div>
+                    <div class="expertise-description">
+                        Azure, Google Cloud, ITIL, IA aplicada e modernização de infraestrutura com foco em eficiência e segurança.
+                    </div>
+                </div>
+
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">📊</div>
+                    <div class="expertise-title">Alinhamento de Negócio</div>
+                    <div class="expertise-description">
+                        Planejamento orçamentário (DRE), políticas de segurança, compliance e transformação da TI em parceiro estratégico.
+                    </div>
+                </div>
+
+                <div class="expertise-card fade-in">
+                    <div class="expertise-icon">🎓</div>
+                    <div class="expertise-title">E&T & Desenvolvimento</div>
+                    <div class="expertise-description">
+                        Educação e treinamento técnico, desenvolvimento de competências e multiplicação de conhecimento em equipes.
+                    </div>
+                </div>
             </div>
 
             <h2 class="section-title">Impacto em Números</h2>
@@ -679,12 +878,54 @@
                     <div class="stat-label">Colaboradores Treinados</div>
                 </div>
                 <div class="stat-card fade-in">
-                    <div class="stat-number">R$ 98MM</div>
-                    <div class="stat-label">Projeto de Inauguração</div>
+                    <div class="stat-number">R$ 150MM</div>
+                    <div class="stat-label">Faturamento Gerenciado</div>
                 </div>
                 <div class="stat-card fade-in">
-                    <div class="stat-number">32</div>
-                    <div class="stat-label">PDVs Gerenciados</div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Operação Crítica</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section -->
+        <section id="cases" class="container">
+            <h2 class="section-title">Cases de Sucesso</h2>
+            <div class="cases-grid">
+                <div class="case-card fade-in">
+                    <div class="case-title">Sistema de Controle de Pausas</div>
+                    <div class="case-description">
+                        Desenvolvido uma solução automatizada de controle de intervalos para 300+ colaboradores/dia, 
+                        integrando cálculo automático de atrasos, notificações em tempo real e geração de relatórios para gestão.
+                    </div>
+                    <div class="case-result">
+                        <div class="case-result-title">Resultado</div>
+                        <div class="case-result-value">↑ 70% Conformidade em 2 semanas</div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">Google Sheets</span>
+                        <span class="case-tag">Automação</span>
+                        <span class="case-tag">Gestão</span>
+                        <span class="case-tag">Inovação</span>
+                    </div>
+                </div>
+
+                <div class="case-card fade-in">
+                    <div class="case-title">Sistema de Auditoria com QR Code</div>
+                    <div class="case-description">
+                        Implementei um sistema inteligente de auditoria de patrimônio corporativo com QR Code, 
+                        mapeando 80.000+ ativos em 32+ setores e integrando com coletores Zebra para auditoria descentralizada.
+                    </div>
+                    <div class="case-result">
+                        <div class="case-result-title">Resultado</div>
+                        <div class="case-result-value">↓ 95% Redução de Relatórios</div>
+                    </div>
+                    <div class="case-tags">
+                        <span class="case-tag">QR Code</span>
+                        <span class="case-tag">Automação</span>
+                        <span class="case-tag">Auditoria</span>
+                        <span class="case-tag">Escalabilidade</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -700,17 +941,36 @@
                         <h3 class="timeline-title">Supervisor de TI (de facto)</h3>
                         <div class="timeline-company">Grupo Giassi Supermercados</div>
                         <p class="timeline-description">
-                            Responsável técnico pela infraestrutura completa da filial de Jaraguá do Sul, 
-                            garantindo operação 24/7 e liderando toda a rotina técnica local.
+                            Responsável técnico único pela infraestrutura completa da filial, garantindo operação 24/7 
+                            com 400+ colaboradores e R$ 150MM de faturamento anual.
                         </p>
                         <ul class="timeline-achievements">
-                            <li>Responsável técnico por inauguração de R$ 98MM com 100% de uptime no primeiro dia</li>
-                            <li>Gestão completa de 32 PDVs, 250 câmeras CFTV, 15 balanças, servidores e rede</li>
-                            <li>Treinamento de +400 colaboradores, reduzindo chamados recorrentes em 35%</li>
-                            <li>Automação de 15+ processos operacionais via Google Sheets (economizando 20h/mês)</li>
+                            <li>Inauguração de filial com 55+ ativos de TI, 100% uptime no primeiro dia</li>
+                            <li>Gestão de 35 PDVs, 250 câmeras CFTV, 15+ switches, 20+ access points Ubiquiti</li>
+                            <li>Treinamento de 400+ colaboradores em sistemas, segurança e compliance</li>
+                            <li>Automação de 15+ processos operacionais (economizando 20h/mês)</li>
                             <li>Suporte N2/N3 em ERP TOTVS RMS e PDV Visual Mix</li>
-                            <li>Gestão de DRE e orçamento de TI, apoiando 18 setores da loja</li>
-                            <li>Formação de assistentes e multiplicadores de TI internos</li>
+                            <li>Planejamento orçamentário (DRE) e gestão de políticas de segurança</li>
+                            <li>Desenvolvimento de 5+ assistentes técnicos do zero até autonomia operacional</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Autônomo -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 — Presente</div>
+                        <h3 class="timeline-title">Consultor Autônomo em TI</h3>
+                        <div class="timeline-company">Infraestrutura & Projetos</div>
+                        <p class="timeline-description">
+                            Consultoria técnica em infraestrutura, implementação de sistemas e projetos para PMEs, varejo e grandes empresas.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Consultoria em infraestrutura, redes e suporte técnico especializado</li>
+                            <li>Implementação de sistemas para varejo e PMEs</li>
+                            <li>Treinamento técnico em informática, sistemas operacionais e ferramentas</li>
+                            <li>Projetos de rede e inaugurações de lojas</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -723,13 +983,13 @@
                         <h3 class="timeline-title">Analista de Sistemas</h3>
                         <div class="timeline-company">Seti Tecnologia</div>
                         <p class="timeline-description">
-                            Foco em segurança e redes corporativas, atendendo cerca de 20 clientes empresariais.
+                            Suporte técnico N2/N3 focado em infraestrutura de redes, segurança e firewall para 20+ clientes corporativos.
                         </p>
                         <ul class="timeline-achievements">
                             <li>Configuração e otimização de Firewalls S4, VPN e QoS</li>
-                            <li>Suporte técnico N2/N3 para ambientes corporativos</li>
+                            <li>Monitoramento e resposta a incidentes de segurança</li>
                             <li>Gestão de servidores de e-mail e políticas de segurança</li>
-                            <li>Monitoramento e resolução de incidentes críticos</li>
+                            <li>Troubleshooting avançado em ambientes corporativos</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -739,51 +999,15 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-date">2012 — 2017</div>
-                        <h3 class="timeline-title">Operador de Montagem II</h3>
+                        <h3 class="timeline-title">Operador de Montagem</h3>
                         <div class="timeline-company">WEG Motores</div>
                         <p class="timeline-description">
-                            Experiência em ambiente industrial de alta exigência, desenvolvendo base de disciplina e processos estruturados.
+                            Experiência em ambiente industrial de alta exigência, desenvolvendo disciplina, processos estruturados e foco em qualidade.
                         </p>
                         <ul class="timeline-achievements">
-                            <li>Cultura de qualidade e método em processos industriais</li>
+                            <li>Operação em ambiente industrial de grande porte</li>
+                            <li>Cultura de qualidade e processos estruturados</li>
                             <li>Comprometimento com prazos e rotinas críticas</li>
-                            <li>Visão de operação aplicada posteriormente em TI</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <!-- Juresa -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2010 — 2012</div>
-                        <h3 class="timeline-title">Auxiliar Administrativo/Faturamento</h3>
-                        <div class="timeline-company">Juresa</div>
-                        <p class="timeline-description">
-                            Primeiro emprego registrado, onde descobri afinidade com tecnologia através de atividades administrativas e digitação.
-                        </p>
-                        <ul class="timeline-achievements">
-                            <li>Suporte administrativo e organização documental</li>
-                            <li>Primeiros contatos com sistemas corporativos</li>
-                            <li>Base de atendimento e relacionamento profissional</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-
-                <!-- Autônomo -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2008 — Presente</div>
-                        <h3 class="timeline-title">Consultor Autônomo em TI</h3>
-                        <div class="timeline-company">Infraestrutura & Projetos</div>
-                        <p class="timeline-description">
-                            Projetos de infraestrutura, inaugurações de lojas e implantações de rede para grandes varejistas.
-                        </p>
-                        <ul class="timeline-achievements">
-                            <li>Parceria com Capgemini, Melhor Infra, Renner, Youcom e Giassi</li>
-                            <li>Implantações de rede e PDVs em aberturas de lojas</li>
-                            <li>Manutenção, suporte técnico e consultoria para PMEs</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -799,24 +1023,26 @@
                     <h3 class="skill-category-title">🖥️ Infraestrutura & Redes</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Servidores Windows/Linux</span>
-                        <span class="skill-tag">Virtualização</span>
                         <span class="skill-tag">Redes TCP/IP</span>
-                        <span class="skill-tag">VPN</span>
-                        <span class="skill-tag">Firewall</span>
-                        <span class="skill-tag">QoS</span>
-                        <span class="skill-tag">CFTV</span>
+                        <span class="skill-tag">Firewall Sophos</span>
+                        <span class="skill-tag">Firewall S4</span>
+                        <span class="skill-tag">VPN & QoS</span>
+                        <span class="skill-tag">Ubiquiti UniFi</span>
+                        <span class="skill-tag">CFTV & Segurança</span>
                         <span class="skill-tag">Wi-Fi Corporativo</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">☁️ Cloud & DevOps</h3>
+                    <h3 class="skill-category-title">☁️ Cloud & Modernização</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Microsoft Azure</span>
                         <span class="skill-tag">Google Cloud</span>
+                        <span class="skill-tag">ITIL V4</span>
                         <span class="skill-tag">Backup & Recovery</span>
                         <span class="skill-tag">Monitoramento</span>
                         <span class="skill-tag">Automação</span>
+                        <span class="skill-tag">IA Aplicada</span>
                     </div>
                 </div>
 
@@ -828,120 +1054,164 @@
                         <span class="skill-tag">Service Desk</span>
                         <span class="skill-tag">Active Directory</span>
                         <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Sistemas de Ponto</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">🎯 Soft Skills</h3>
+                    <h3 class="skill-category-title">⚡ Automação & Inovação</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Sheets Avançado</span>
+                        <span class="skill-tag">Scripts & Automação</span>
+                        <span class="skill-tag">QR Code & Coletores</span>
+                        <span class="skill-tag">Integração de Sistemas</span>
+                        <span class="skill-tag">Troubleshooting Avançado</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">👥 Liderança & Gestão</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Liderança Técnica</span>
-                        <span class="skill-tag">Gestão de Equipes</span>
-                        <span class="skill-tag">Resolução de Problemas</span>
-                        <span class="skill-tag">Treinamento</span>
-                        <span class="skill-tag">Comunicação</span>
-                        <span class="skill-tag">Gestão de Crises</span>
+                        <span class="skill-tag">Desenvolvimento de Equipes</span>
+                        <span class="skill-tag">Gestão de Projetos</span>
+                        <span class="skill-tag">Planejamento Orçamentário</span>
+                        <span class="skill-tag">Alinhamento de Negócio</span>
+                        <span class="skill-tag">Comunicação Técnica</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">🔒 Segurança & Compliance</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Políticas de Segurança</span>
+                        <span class="skill-tag">Auditoria & Compliance</span>
+                        <span class="skill-tag">Gestão de Incidentes</span>
+                        <span class="skill-tag">Controle de Acesso</span>
+                        <span class="skill-tag">Backup & Recuperação</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications -->
+        <!-- Certifications Section -->
         <section id="certificacoes" class="container">
             <h2 class="section-title">Certificações & Formação</h2>
             <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">🎓</div>
-                    <h3 class="cert-title">Gestão da Tecnologia da Informação</h3>
-                    <p class="cert-issuer">SENAC</p>
-                    <span class="cert-status">Concluído</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#0078D4"/>
+                        <text x="50" y="65" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">M</text>
+                    </svg>
+                    <div class="cert-title">Infraestrutura de Nuvem: Governança e Gerenciamento</div>
+                    <div class="cert-issuer">Microsoft</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">☁️</div>
-                    <h3 class="cert-title">Microsoft Azure Fundamentals (AZ-900)</h3>
-                    <p class="cert-issuer">Microsoft</p>
-                    <span class="cert-status">Em andamento</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#0078D4"/>
+                        <text x="50" y="65" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">M</text>
+                    </svg>
+                    <div class="cert-title">Introdução ao Microsoft Azure</div>
+                    <div class="cert-issuer">Microsoft</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">☁️</div>
-                    <h3 class="cert-title">Infraestrutura de Nuvem: Gerenciamento e Governança do Azure</h3>
-                    <p class="cert-issuer">Microsoft</p>
-                    <span class="cert-status">Concluído - Out/2025</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- NVIDIA Logo -->
+                        <g>
+                            <!-- Green background -->
+                            <rect x="10" y="10" width="80" height="80" rx="8" fill="#76B900"/>
+                            <!-- NVIDIA text simplified -->
+                            <text x="50" y="65" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">N</text>
+                        </g>
+                    </svg>
+                    <div class="cert-title">Fundamentos de IA para Infraestrutura e Operações</div>
+                    <div class="cert-issuer">NVIDIA</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">☁️</div>
-                    <h3 class="cert-title">Introdução ao Microsoft Azure: Descrever Conceitos de Nuvem</h3>
-                    <p class="cert-issuer">Microsoft</p>
-                    <span class="cert-status">Concluído - Out/2025</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#1F73B7"/>
+                        <text x="50" y="65" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">E</text>
+                    </svg>
+                    <div class="cert-title">ITIL V4 Introduction to Service Management</div>
+                    <div class="cert-issuer">EDUCBA</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🤖</div>
-                    <h3 class="cert-title">Maximize Productivity With AI Tools</h3>
-                    <p class="cert-issuer">Google Career Certificates</p>
-                    <span class="cert-status">Concluído - Nov/2025</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" fill="#4285F4"/>
+                        <text x="50" y="65" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">G</text>
+                    </svg>
+                    <div class="cert-title">Google AI Essentials</div>
+                    <div class="cert-issuer">Google</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">🤖</div>
-                    <h3 class="cert-title">Prompting Responsável: Maximizar a IA no seu negócio</h3>
-                    <p class="cert-issuer">Santander Open Academy</p>
-                    <span class="cert-status">Concluído - Out/2025</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#EC1C24"/>
+                        <text x="50" y="65" font-size="48" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">S</text>
+                    </svg>
+                    <div class="cert-title">Prompting Responsável</div>
+                    <div class="cert-issuer">Santander Open Academy</div>
+                    <div class="cert-status">2025</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">📊</div>
-                    <h3 class="cert-title">Power BI</h3>
-                    <p class="cert-issuer">Santander Open Academy</p>
-                    <span class="cert-status">Concluído</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Graduation cap -->
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#9C27B0"/>
+                        <path d="M 30 50 L 50 35 L 70 50 M 50 35 L 50 55" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <circle cx="50" cy="65" r="6" fill="white"/>
+                    </svg>
+                    <div class="cert-title">Tecnólogo em Gestão da Tecnologia da Informação</div>
+                    <div class="cert-issuer">Faculdade de Tecnologia Senac</div>
+                    <div class="cert-status">2015</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">👥</div>
-                    <h3 class="cert-title">Gestão eficaz de projetos e equipes</h3>
-                    <p class="cert-issuer">Santander Open Academy</p>
-                    <span class="cert-status">Concluído</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Chart/Planning -->
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#FF9800"/>
+                        <rect x="25" y="55" width="8" height="20" fill="white"/>
+                        <rect x="38" y="45" width="8" height="30" fill="white"/>
+                        <rect x="51" y="35" width="8" height="40" fill="white"/>
+                        <rect x="64" y="50" width="8" height="25" fill="white"/>
+                    </svg>
+                    <div class="cert-title">Analista de Planejamento de Projetos de TI</div>
+                    <div class="cert-issuer">Senac</div>
+                    <div class="cert-status">2014</div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-icon">💡</div>
-                    <h3 class="cert-title">Liderança para um mundo digital</h3>
-                    <p class="cert-issuer">Santander Open Academy</p>
-                    <span class="cert-status">Concluído</span>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">📈</div>
-                    <h3 class="cert-title">Introdução à Ciência de Dados</h3>
-                    <p class="cert-issuer">Santander Open Academy</p>
-                    <span class="cert-status">Concluído</span>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">🔧</div>
-                    <h3 class="cert-title">Analista de Infraestrutura de TI</h3>
-                    <p class="cert-issuer">Certificação Profissional</p>
-                    <span class="cert-status">Concluído</span>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">📊</div>
-                    <h3 class="cert-title">Analista de Projetos de TI</h3>
-                    <p class="cert-issuer">Certificação Profissional</p>
-                    <span class="cert-status">Concluído</span>
+                <div class="cert-card fade-in">
+                    <svg class="cert-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Server/Infrastructure -->
+                        <rect x="10" y="10" width="80" height="80" rx="8" fill="#00BCD4"/>
+                        <rect x="20" y="25" width="60" height="15" rx="2" fill="none" stroke="white" stroke-width="2"/>
+                        <circle cx="30" cy="32" r="2" fill="white"/>
+                        <circle cx="45" cy="32" r="2" fill="white"/>
+                        <circle cx="60" cy="32" r="2" fill="white"/>
+                        <rect x="20" y="50" width="60" height="15" rx="2" fill="none" stroke="white" stroke-width="2"/>
+                        <circle cx="30" cy="57" r="2" fill="white"/>
+                        <circle cx="45" cy="57" r="2" fill="white"/>
+                        <circle cx="60" cy="57" r="2" fill="white"/>
+                    </svg>
+                    <div class="cert-title">Analista de Infraestrutura de TI</div>
+                    <div class="cert-issuer">Senac</div>
+                    <div class="cert-status">2014</div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contato" class="container">
-            <h2 class="section-title">Vamos Conversar?</h2>
-            <p style="text-align: center; color: var(--text-dim); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Busco posições como <strong style="color: var(--primary);">Analista Sênior, Especialista ou Coordenador de Infraestrutura/Operações</strong>. 
-                Aberto a remoto, híbrido ou presencial em Jaraguá do Sul.
-            </p>
+            <h2 class="section-title">Entre em Contato</h2>
             <div class="contact-grid">
                 <a href="mailto:rcoliveiranet@gmail.com" class="contact-card">
                     <div class="contact-icon">📧</div>
@@ -950,29 +1220,30 @@
                 </a>
 
                 <a href="https://wa.me/5547992425067" target="_blank" class="contact-card">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">💬</div>
                     <div class="contact-label">WhatsApp</div>
-                    <div class="contact-value">(47) 9 9242-5067</div>
+                    <div class="contact-value">(47) 99242-5067</div>
                 </a>
 
                 <a href="https://www.linkedin.com/in/oliveira-ti" target="_blank" class="contact-card">
                     <div class="contact-icon">💼</div>
                     <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value">/in/oliveira-ti</div>
+                    <div class="contact-value">oliveira-ti</div>
                 </a>
 
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-label">Localização</div>
-                    <div class="contact-value">Jaraguá do Sul, SC</div>
-                </div>
+                <a href="https://github.com/rcoliveiranet" target="_blank" class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">rcoliveiranet</div>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Rafael Oliveira | Desenvolvido para destacar excelência em TI</p>
+            <p>&copy; 2025 Rafael Oliveira. Profissional de TI | Infraestrutura, Liderança & Inovação.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Desenvolvido com foco em estratégia profissional e resultados mensuráveis.</p>
         </div>
     </footer>
 
@@ -987,6 +1258,7 @@
             navLinks.classList.remove('active');
         }
 
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1000,105 +1272,24 @@
             });
         });
 
+        // Add fade-in animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(section);
+        document.querySelectorAll('.stat-card, .cert-card, .case-card, .expertise-card').forEach(el => {
+            observer.observe(el);
         });
-
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'fixed';
-            particle.style.width = '2px';
-            particle.style.height = '2px';
-            particle.style.background = 'var(--primary)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.opacity = '0';
-            particle.style.zIndex = '-1';
-            
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            
-            document.body.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.style.transition = 'opacity 2s';
-                particle.style.opacity = '0.3';
-            }, 100);
-            
-            setTimeout(() => {
-                particle.style.opacity = '0';
-                setTimeout(() => particle.remove(), 2000);
-            }, 3000);
-        }
-
-        setInterval(createParticle, 1000);
-
-        function animateCounter(element, target, duration = 2000) {
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 16);
-        }
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const numbers = entry.target.querySelectorAll('.stat-number');
-                    numbers.forEach(num => {
-                        const text = num.textContent;
-                        if (text.includes('+')) {
-                            const value = parseInt(text.replace('+', ''));
-                            num.textContent = '0';
-                            animateCounter(num, value);
-                            setTimeout(() => num.textContent = value + '+', 2000);
-                        } else if (text.includes('R)) {
-                            // Keep as is for currency
-                        } else {
-                            const value = parseInt(text);
-                            if (!isNaN(value)) {
-                                num.textContent = '0';
-                                animateCounter(num, value);
-                            }
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-grid');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
     </script>
 </body>
 </html>
